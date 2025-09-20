@@ -2,6 +2,7 @@
 import { builder, Builder, withChildren } from "@builder.io/react";
 import Counter from "./components/Counter/Counter";
 import ProductCard from "./src/components/ProductCard";
+import BlogPostLoop from "./src/components/BlogPostLoop";
 import { RenderBuilderContent } from "./components/builder";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
@@ -57,6 +58,62 @@ Builder.registerComponent(ProductCard, {
     },
   ],
   image: "https://tabler-icons.io/static/tabler-icons/icons-png/shopping-cart.png"
+});
+
+Builder.registerComponent(BlogPostLoop, {
+  name: "BlogPostLoop",
+  inputs: [
+    {
+      name: "postsToShow",
+      type: "number",
+      required: false,
+      defaultValue: 6,
+      helperText: "Number of posts to display (1-30)"
+    },
+    {
+      name: "gridColumns",
+      type: "number",
+      required: false,
+      defaultValue: 3,
+      helperText: "Number of columns in grid (1-4)"
+    },
+    {
+      name: "showTags",
+      type: "boolean",
+      required: false,
+      defaultValue: true,
+      helperText: "Display post tags"
+    },
+    {
+      name: "showReactions",
+      type: "boolean",
+      required: false,
+      defaultValue: true,
+      helperText: "Display likes and dislikes"
+    },
+    {
+      name: "showViews",
+      type: "boolean",
+      required: false,
+      defaultValue: true,
+      helperText: "Display view count"
+    },
+    {
+      name: "readMoreText",
+      type: "string",
+      required: false,
+      defaultValue: "Read More",
+      helperText: "Text for the read more button"
+    },
+    {
+      name: "loadingText",
+      type: "string",
+      required: false,
+      defaultValue: "Loading posts...",
+      helperText: "Text shown while loading"
+    }
+  ],
+  image: "https://tabler-icons.io/static/tabler-icons/icons-png/article.png"
 });
 
 Builder.registerComponent(withChildren(RenderBuilderContent), {

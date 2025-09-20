@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import ProductCard from "../src/components/ProductCard";
+import BlogPostLoop from "../src/components/BlogPostLoop";
 import "../src/builder-registry";
 
 export default function Home() {
@@ -49,7 +50,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="bg-blue-50 rounded-lg p-8 text-center">
+        <div className="bg-blue-50 rounded-lg p-8 text-center mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Ready for Builder.io
           </h2>
@@ -64,6 +65,49 @@ export default function Home() {
               <li>• Price display</li>
               <li>• Configurable enquire button URL</li>
               <li>• Responsive design with Tailwind CSS</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Blog Post Loop Demo */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Blog Post Loop Component
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Dynamic blog posts fetched from DummyJSON API. Fully customizable in Builder.io with options for grid layout, post count, and display settings.
+            </p>
+          </div>
+
+          <BlogPostLoop
+            postsToShow={6}
+            gridColumns={3}
+            showTags={true}
+            showReactions={true}
+            showViews={true}
+            readMoreText="Read Full Post"
+            loadingText="Loading amazing posts..."
+          />
+        </div>
+
+        <div className="bg-green-50 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            BlogPostLoop Component Features
+          </h2>
+          <p className="text-gray-600 mb-4">
+            The BlogPostLoop component fetches live data from DummyJSON API and is fully configurable in Builder.io.
+          </p>
+          <div className="text-sm text-gray-500">
+            <p>Component features:</p>
+            <ul className="mt-2 space-y-1">
+              <li>• Live API data from https://dummyjson.com/posts</li>
+              <li>• Configurable post count (1-30 posts)</li>
+              <li>• Responsive grid layout (1-4 columns)</li>
+              <li>• Toggle tags, reactions, and view counts</li>
+              <li>• Customizable button text and loading messages</li>
+              <li>• Error handling and loading states</li>
+              <li>• Mobile-responsive design</li>
             </ul>
           </div>
         </div>
