@@ -20,26 +20,43 @@ Builder.registerComponent(ProductCard, {
   name: "ProductCard",
   inputs: [
     {
-      name: "description",
-      type: "string",
-    },
-    {
-      name: "enquireUrl",
-      type: "string",
-    },
-    {
       name: "image",
-      type: "string",
-    },
-    {
-      name: "price",
-      type: "string",
+      type: "file",
+      allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+      required: false,
+      defaultValue: "https://via.placeholder.com/300x200",
+      helperText: "Upload product image"
     },
     {
       name: "productTitle",
       type: "string",
+      required: false,
+      defaultValue: "Product Name",
+      helperText: "Enter the product title"
+    },
+    {
+      name: "description",
+      type: "longText",
+      required: false,
+      defaultValue: "Product description goes here",
+      helperText: "Enter a detailed product description"
+    },
+    {
+      name: "price",
+      type: "string",
+      required: false,
+      defaultValue: "$99.99",
+      helperText: "Enter the product price (e.g., $99.99)"
+    },
+    {
+      name: "enquireUrl",
+      type: "url",
+      required: false,
+      defaultValue: "#",
+      helperText: "URL for the enquire button (contact form, email, etc.)"
     },
   ],
+  image: "https://tabler-icons.io/static/tabler-icons/icons-png/shopping-cart.png"
 });
 
 Builder.registerComponent(withChildren(RenderBuilderContent), {
