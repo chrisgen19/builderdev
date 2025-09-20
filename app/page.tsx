@@ -21,10 +21,28 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Builder.io Components Demo
           </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto mb-6">
             Custom components ready to use in Builder.io visual editor.
             From simple greeting cards to complex product displays and blog loops.
           </p>
+
+          {/* Builder.io Editor Links */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <a
+              href="/builder"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+            >
+              🎨 Open Builder.io Editor
+            </a>
+            <a
+              href="https://builder.io/content"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+            >
+              🚀 Builder.io Dashboard
+            </a>
+          </div>
         </div>
 
         {/* Simple Hello Card Demo */}
