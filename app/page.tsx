@@ -2,6 +2,7 @@
 import Image from "next/image";
 import ProductCard from "../src/components/ProductCard";
 import BlogPostLoop from "../src/components/BlogPostLoop";
+import SimpleHelloCard from "../src/components/SimpleHelloCard";
 import "../src/builder-registry";
 
 export default function Home() {
@@ -18,12 +19,77 @@ export default function Home() {
             priority
           />
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            ProductCard Component Demo
+            Builder.io Components Demo
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            This custom ProductCard component is ready to use in Builder.io.
-            It includes image, title, description, price, and enquire button with customizable URL.
+            Custom components ready to use in Builder.io visual editor.
+            From simple greeting cards to complex product displays and blog loops.
           </p>
+        </div>
+
+        {/* Simple Hello Card Demo */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              📚 Learning Component: Simple Hello Card
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Perfect for learning! This component shows the basics of creating Builder.io components with detailed comments in the code.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <SimpleHelloCard
+              name="Developer"
+              message="Learn how to build components step by step!"
+              backgroundColor="#dbeafe"
+              textColor="#1e40af"
+              showBorder={true}
+              borderRadius={12}
+            />
+            <SimpleHelloCard
+              name="Designer"
+              message="Customize everything visually in Builder.io!"
+              backgroundColor="#fef3c7"
+              textColor="#92400e"
+              showBorder={false}
+              borderRadius={20}
+            />
+            <SimpleHelloCard
+              name="Student"
+              message="This component teaches you the fundamentals."
+              backgroundColor="#ecfdf5"
+              textColor="#065f46"
+              showBorder={true}
+              borderRadius={4}
+            />
+          </div>
+
+          <div className="bg-purple-50 rounded-lg p-6 text-center">
+            <h3 className="text-xl font-semibold text-purple-900 mb-3">
+              🎓 What You'll Learn
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-purple-700">
+              <div>
+                <h4 className="font-medium mb-2">Component Basics:</h4>
+                <ul className="text-left space-y-1">
+                  <li>• Props and TypeScript interfaces</li>
+                  <li>• Default values and destructuring</li>
+                  <li>• Dynamic styles and CSS</li>
+                  <li>• JSX structure and rendering</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-medium mb-2">Builder.io Integration:</h4>
+                <ul className="text-left space-y-1">
+                  <li>• Field types (string, color, boolean, number)</li>
+                  <li>• Component registration</li>
+                  <li>• Helper text and defaults</li>
+                  <li>• Visual editor configuration</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">

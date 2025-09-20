@@ -3,6 +3,7 @@ import { builder, Builder, withChildren } from "@builder.io/react";
 import Counter from "./components/Counter/Counter";
 import ProductCard from "./src/components/ProductCard";
 import BlogPostLoop from "./src/components/BlogPostLoop";
+import SimpleHelloCard from "./src/components/SimpleHelloCard";
 import { RenderBuilderContent } from "./components/builder";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
@@ -114,6 +115,68 @@ Builder.registerComponent(BlogPostLoop, {
     }
   ],
   image: "https://tabler-icons.io/static/tabler-icons/icons-png/article.png"
+});
+
+// SIMPLE COMPONENT REGISTRATION EXAMPLE
+// This shows you step-by-step how to register a component with Builder.io
+Builder.registerComponent(SimpleHelloCard, {
+  // 1. Component name (appears in Builder.io's component panel)
+  name: "SimpleHelloCard",
+
+  // 2. Define the inputs (fields that appear in Builder.io editor)
+  inputs: [
+    {
+      // TEXT INPUT FIELD
+      name: "name",                    // Property name (matches component props)
+      type: "string",                  // Field type (creates text input)
+      required: false,                 // Optional field
+      defaultValue: "Friend",          // Default value
+      helperText: "Enter a name to greet" // Tooltip in Builder.io
+    },
+    {
+      // LONG TEXT INPUT FIELD
+      name: "message",
+      type: "longText",                // Creates textarea instead of single line
+      required: false,
+      defaultValue: "Welcome to my site!",
+      helperText: "Enter your welcome message"
+    },
+    {
+      // COLOR PICKER FIELD
+      name: "backgroundColor",
+      type: "color",                   // Creates color picker
+      required: false,
+      defaultValue: "#f3f4f6",
+      helperText: "Choose background color"
+    },
+    {
+      // ANOTHER COLOR PICKER
+      name: "textColor",
+      type: "color",
+      required: false,
+      defaultValue: "#111827",
+      helperText: "Choose text color"
+    },
+    {
+      // BOOLEAN/CHECKBOX FIELD
+      name: "showBorder",
+      type: "boolean",                 // Creates checkbox/toggle
+      required: false,
+      defaultValue: true,
+      helperText: "Show border around card"
+    },
+    {
+      // NUMBER INPUT FIELD
+      name: "borderRadius",
+      type: "number",                  // Creates number input
+      required: false,
+      defaultValue: 8,
+      helperText: "Border radius in pixels (0-50)"
+    }
+  ],
+
+  // 3. Component icon in Builder.io (optional)
+  image: "https://tabler-icons.io/static/tabler-icons/icons-png/message-circle.png"
 });
 
 Builder.registerComponent(withChildren(RenderBuilderContent), {
